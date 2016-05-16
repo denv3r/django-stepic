@@ -20,6 +20,6 @@ from qa.views import test
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^question/', test),
+    url(r'^question/\d+/$', test),
     url(r'^', not_found),
 ]
