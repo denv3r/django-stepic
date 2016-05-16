@@ -1,5 +1,5 @@
+sudo pkill gunicorn
 sudo ln -sf /home/box/web/etc/nginx.conf  /etc/nginx/sites-enabled/default
 sudo /etc/init.d/nginx restart
-sudo pkill gunicorn
-sudo gunicorn hello:wsgi_application --bind 0.0.0.0:8080 &
-sudo gunicorn ask.ask.wsgi:application --bind 0.0.0.0:8000 &
+sudo gunicorn -c /home/box/web/etc/gunicorn_hello.conf &
+sudo gunicorn -c /home/box/web/etc/gunicorn_ask.conf &
