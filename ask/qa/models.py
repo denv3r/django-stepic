@@ -22,4 +22,4 @@ class Answer(models.Model):
 	text = models.TextField()
 	added_at = models.DateTimeField(auto_now_add=True)
 	question = models.ForeignKey(Question, null=True, on_delete=models.SET_NULL, related_name='question_set')
-	author = models.ForeignKey(Question, null=True, on_delete=models.SET_NULL, related_name='author_set')
+	author = models.ForeignKey(User, null=True, on_delete=models.SET_NULL, related_name='author_set')
